@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-const Button = ({ children, variant = "primary", onClick }) => {
+const Button = ({ children, variant = "primary", onClick, className = "" }) => {
   const baseStyles =
-    "px-6 py-3 rounded-lg text-sm font-medium transition shadow-md";
+    "px-6 py-3 rounded-lg text-sm font-medium transition shadow-md inline-flex items-center justify-center";
 
   const variants = {
     primary: "bg-primary text-white hover:bg-primary/90",
@@ -15,7 +15,10 @@ const Button = ({ children, variant = "primary", onClick }) => {
   };
 
   return (
-    <button onClick={onClick} className={clsx(baseStyles, variants[variant])}>
+    <button
+      onClick={onClick}
+      className={clsx(baseStyles, variants[variant], className)}
+    >
       {children}
     </button>
   );
@@ -25,6 +28,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   variant: PropTypes.string,
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default Button;
