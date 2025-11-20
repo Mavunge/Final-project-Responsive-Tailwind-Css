@@ -2,7 +2,7 @@ import React from "react";
 import SectionWrapper from "./SectionWrapper";
 
 import smartElectrical from "../../assets/images/smart-electrical.jpg";
-import advancedCctv from "../../assets/images/advaced-cctv.jpg";
+import advancedCctv from "../../assets/images/advanced-cctv.jpg";
 import maintenanceInspection from "../../assets/images/maintenance-inspection.jpg";
 
 const services = [
