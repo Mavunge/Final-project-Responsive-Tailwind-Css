@@ -1,24 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Button from "../common/Button";
 import heroImage from "../../assets/images/hero-electrical-installation.JPG";
-import { ShieldCheck, Camera, Zap, Power } from "lucide-react";
 
 const Hero = () => {
-  const [isLight, setIsLight] = useState(false);
-
-  const toggleTheme = () => {
-    const html = document.documentElement;
-
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      setIsLight(true);
-    } else {
-      html.classList.add("dark");
-      setIsLight(false);
-    }
-  };
-
   return (
     <div
       id="home"
@@ -29,29 +14,11 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Orange dark overlay */}
-      <div className="absolute inset-0 bg-black/70 dark:bg-black/40"></div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70"></div>
 
       {/* Main content */}
       <div className="relative z-10 w-full text-center text-white px-6">
-
-        {/* Power Button */}
-        <motion.button
-          onClick={toggleTheme}
-          className="
-            mx-auto mb-10 flex flex-col items-center justify-center 
-            bg-black/40 dark:bg-white/20 backdrop-blur-lg
-            border border-orange-400/40 
-            w-28 h-28 rounded-full 
-            shadow-[0_0_20px_#ff8800aa] 
-            hover:shadow-[0_0_35px_#ff8800] 
-            transition-all
-          "
-          whileTap={{ scale: 0.9 }}
-        >
-          <Power size={40} className="text-orange-400 drop-shadow-[0_0_10px_#ff8800]" />
-          <span className="text-xs mt-2 text-orange-300">Let There Be Light</span>
-        </motion.button>
 
         {/* Title */}
         <motion.h1
